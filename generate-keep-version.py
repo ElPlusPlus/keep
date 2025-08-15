@@ -86,9 +86,11 @@ else:
     with open(fingerprint_copy, "wb") as f:
         f.write(fingerprint_data)
 
+    print("Uploading version to git.")
+
     # Commit changes to Git
-    #subprocess.run(["git", "-C", str(REPO_DIR), "add", str(fingerprint_copy), str(VERSIONS_FILE)], check=True)
-    #subprocess.run(["git", "-C", str(REPO_DIR), "commit", "-m", f"Add fingerprint for version {version}"], check=True)
+    subprocess.run(["git", "add", str(fingerprint_copy), str(VERSIONS_FILE)], check=True)
+    subprocess.run(["git", "commit", "-m", f"Added new release version {version}"], check=True)
 
 # 7. Save version locally
 with open("device_version.txt", "w") as f:
