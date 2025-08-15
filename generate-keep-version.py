@@ -17,7 +17,7 @@ FINGERPRINTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # 1. Generate fingerprint JSON
 print("Generating fingerprint...")
-subprocess.run([ "sh", "generate-keep-fingerprint.sh"], check=True)
+#subprocess.run([ "sh", "generate-keep-fingerprint.sh"], check=True)
 
 # 2. Read JSON data
 with open(FINGERPRINT_JSON, "rb") as f:
@@ -66,7 +66,9 @@ else:
     major, minor, patch = map(int, last_version.split("."))
 
     # Bump logic
-    if minor_hash and minor_hash != last_minor_hash:
+    if not last_minor_hash:
+        pass
+    elif minor_hash and minor_hash != last_minor_hash:
         minor += 1
         patch = 0
     else:
