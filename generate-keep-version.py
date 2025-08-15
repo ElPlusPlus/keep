@@ -17,7 +17,7 @@ FINGERPRINTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # 1. Generate fingerprint JSON
 print("Generating fingerprint...")
-subprocess.run([ "sh", "generate-keep-fingerprint.sh"], check=True)
+subprocess.run(["bash", "generate-keep-fingerprint.sh"], check=True)
 
 # 2. Read JSON data
 with open(FINGERPRINT_JSON, "rb") as f:
