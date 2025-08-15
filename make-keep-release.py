@@ -164,4 +164,4 @@ if step < 7:
 
 # B. Generate version
 print("Generating fingerprint...")
-subprocess.run(["python", "generate-keep-version.py"], check=True)
+subprocess.run(["python3", "generate-keep-version.py"], check=True)
