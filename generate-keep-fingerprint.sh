@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /boot/dietpi/.version
+
 OUTPUT_FILE="keep-fingerprint.json"
 
 # Build JSON
